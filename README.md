@@ -27,9 +27,9 @@ The final Android handoff uses separate FP16 image and text ONNX encoders. Model
 
 <table>
   <tr>
-    <td width="33%" align="center"><img src="assets/app-home.png" alt="Android app home screen with camera, gallery, and text search options"></td>
-    <td width="33%" align="center"><img src="assets/app-image-result.png" alt="Android image recognition result for Gwanghwamun"></td>
-    <td width="33%" align="center"><img src="assets/app-text-search.png" alt="Android text search result for Naksan Park"></td>
+    <td width="33%" align="center"><img src="assets/app-home.png" alt="Android app home screen with camera, gallery, and text search options" width="100%"></td>
+    <td width="33%" align="center"><img src="assets/app-image-result.png" alt="Android image recognition result for Gwanghwamun" width="100%"></td>
+    <td width="33%" align="center"><img src="assets/app-text-search.png" alt="Android text search result for Naksan Park" width="100%"></td>
   </tr>
   <tr>
     <td align="center">1. Select an input path</td>
