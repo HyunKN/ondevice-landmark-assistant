@@ -1,0 +1,20 @@
+{
+  "class_count": 23,
+  "main_run_count": 40,
+  "fold_count": 5,
+  "configurations": [
+    {"name": "S4 full CE", "val_top1": 99.05, "test_top1": 98.67, "macro_f1": 97.11, "low_margin": 6},
+    {"name": "S3 full CE", "val_top1": 98.85, "test_top1": 98.73, "macro_f1": 97.41, "low_margin": 4},
+    {"name": "S3 partial CE", "val_top1": 98.74, "test_top1": 98.63, "macro_f1": 97.16, "low_margin": 8},
+    {"name": "S3 partial ArcFace", "val_top1": 98.55, "test_top1": 98.56, "macro_f1": 97.67, "low_margin": 8},
+    {"name": "S4 partial ArcFace", "val_top1": 98.17, "test_top1": 98.09, "macro_f1": 96.41, "low_margin": 18},
+    {"name": "S4 partial CE", "val_top1": 97.84, "test_top1": 97.61, "macro_f1": 94.70, "low_margin": 34},
+    {"name": "S4 LoRA", "val_top1": 96.67, "test_top1": 96.59, "macro_f1": 93.21, "low_margin": 49},
+    {"name": "S3 LoRA", "val_top1": 95.81, "test_top1": 95.92, "macro_f1": 91.36, "low_margin": 68}
+  ],
+  "dynamic_int8": {"fp32_cosine_mean": 0.99941, "cpu_warm_median_ms": 314},
+  "npu_latency_ms": {"snapdragon_8_gen_2": 517.91, "snapdragon_8_gen_3": 389.67, "snapdragon_8_elite": 374.10},
+  "npu_accuracy_status": "collapsed",
+  "contract_tests": {"python": 10, "flutter": 4, "verified_on": "2026-06-20"}
+}
+

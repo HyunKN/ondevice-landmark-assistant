@@ -1,0 +1,13 @@
+.superpowers/
+.worktrees/
+*.onnx
+*.onnx.data
+*.pt
+*.pth
+*.ckpt
+.env
+*service-account*.json
+google-services.json
+captures-raw/
+__pycache__/
+
