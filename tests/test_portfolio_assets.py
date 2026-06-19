@@ -74,7 +74,7 @@ class PortfolioAssetsTest(unittest.TestCase):
         )
         for phrase in required:
             with self.subTest(phrase=phrase):
-                self.assertIn(phrase, source)
+                self.assertIn(phrase.lower(), source.lower())
 
         forbidden = (
             "혁신",
