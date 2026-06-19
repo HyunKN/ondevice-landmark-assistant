@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">NPU latency and accuracy caveat</title>
+  <desc id="desc">NPU latency and accuracy caveat</desc>
+  <style>
+    text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  </style>
+  <rect width="1200" height="430" rx="24" fill="#0B1220"/>
+  <text x="58" y="68" fill="#E8EEF8" font-size="30" font-weight="700">NPU feasibility measurements</text>
+  <text x="58" y="102" fill="#9FB0C8" font-size="17">Warm latency from the tested quantized path</text>
+  <text x="58" y="171" fill="#E8EEF8" font-size="17">Snapdragon 8 Gen 2</text>
+  <rect x="256" y="148" width="520.0" height="32" rx="8" fill="#68A4FF" opacity="0.82"/>
+  <text x="788.0" y="171" fill="#E8EEF8" font-size="16" font-weight="700">517.91 ms</text>
+  <text x="58" y="237" fill="#E8EEF8" font-size="17">Snapdragon 8 Gen 3</text>
+  <rect x="256" y="214" width="391.2" height="32" rx="8" fill="#68A4FF" opacity="0.82"/>
+  <text x="659.2" y="237" fill="#E8EEF8" font-size="16" font-weight="700">389.67 ms</text>
+  <text x="58" y="303" fill="#E8EEF8" font-size="17">Snapdragon 8 Elite</text>
+  <rect x="256" y="280" width="375.6" height="32" rx="8" fill="#68A4FF" opacity="0.82"/>
+  <text x="643.6" y="303" fill="#E8EEF8" font-size="16" font-weight="700">374.10 ms</text>
+  <rect x="58" y="350" width="1084" height="54" rx="14" fill="#3B2D11" stroke="#F6C453"/>
+  <circle cx="88" cy="377" r="8" fill="#F6C453"/>
+  <text x="110" y="383" fill="#E8EEF8" font-size="18" font-weight="650">Quantized accuracy collapsed — latency is feasibility evidence only</text>
+</svg>

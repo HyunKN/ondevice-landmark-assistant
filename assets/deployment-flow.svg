@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Android deployment flow</title>
+  <desc id="desc">Android deployment flow</desc>
+  <style>
+    text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3DD6C6"/></marker></defs>
+  <rect width="1200" height="430" rx="24" fill="#0B1220"/>
+  <text x="54" y="68" fill="#E8EEF8" font-size="30" font-weight="700">Deployment flow</text>
+  <text x="54" y="102" fill="#9FB0C8" font-size="17">The app shares one embedding contract across image and natural-language search.</text>
+  <line x1="218" y1="245" x2="234" y2="245" stroke="#3DD6C6" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="430" y1="245" x2="446" y2="245" stroke="#3DD6C6" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="652" y1="245" x2="668" y2="245" stroke="#3DD6C6" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="864" y1="245" x2="880" y2="245" stroke="#3DD6C6" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="54" y="190" width="164" height="110" rx="18" fill="#111C31" stroke="#273650" stroke-width="2" aria-label="Image/Text Input"/>
+  <text x="136.0" y="238" fill="#E8EEF8" font-size="17" font-weight="650" text-anchor="middle">Image/Text</text>
+  <text x="136.0" y="266" fill="#9FB0C8" font-size="16" text-anchor="middle">Input</text>
+  <rect x="250" y="190" width="180" height="110" rx="18" fill="#111C31" stroke="#273650" stroke-width="2" aria-label="MobileCLIP2 Encoders"/>
+  <text x="340.0" y="238" fill="#E8EEF8" font-size="17" font-weight="650" text-anchor="middle">MobileCLIP2</text>
+  <text x="340.0" y="266" fill="#9FB0C8" font-size="16" text-anchor="middle">Encoders</text>
+  <rect x="462" y="190" width="190" height="110" rx="18" fill="#111C31" stroke="#273650" stroke-width="2" aria-label="Prototype/Text Index"/>
+  <text x="557.0" y="238" fill="#E8EEF8" font-size="17" font-weight="650" text-anchor="middle">Prototype/Text</text>
+  <text x="557.0" y="266" fill="#9FB0C8" font-size="16" text-anchor="middle">Index</text>
+  <rect x="684" y="190" width="180" height="110" rx="18" fill="#111C31" stroke="#273650" stroke-width="2" aria-label="Confidence Policy"/>
+  <text x="774.0" y="238" fill="#E8EEF8" font-size="17" font-weight="650" text-anchor="middle">Confidence</text>
+  <text x="774.0" y="266" fill="#9FB0C8" font-size="16" text-anchor="middle">Policy</text>
+  <rect x="896" y="190" width="150" height="110" rx="18" fill="#111C31" stroke="#273650" stroke-width="2" aria-label="Flutter UI"/>
+  <text x="971.0" y="238" fill="#E8EEF8" font-size="17" font-weight="650" text-anchor="middle">Flutter</text>
+  <text x="971.0" y="266" fill="#9FB0C8" font-size="16" text-anchor="middle">UI</text>
+  <line x1="971" y1="300" x2="971" y2="342" stroke="#68A4FF" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="860" y="350" width="222" height="52" rx="15" fill="#152744" stroke="#273650"/>
+  <text x="971" y="383" fill="#E8EEF8" font-size="16" text-anchor="middle">Local/Server Logs</text>
+</svg>

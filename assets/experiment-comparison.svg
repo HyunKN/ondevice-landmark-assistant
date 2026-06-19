@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">Validation Top-1 comparison</title>
+  <desc id="desc">Validation Top-1 comparison</desc>
+  <style>
+    text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  </style>
+  <rect width="1200" height="660" rx="24" fill="#0B1220"/>
+  <text x="64" y="68" fill="#E8EEF8" font-size="30" font-weight="700">Validation Top-1 across 8 configurations</text>
+  <text x="64" y="102" fill="#9FB0C8" font-size="17">Five-fold validation mean · axis starts at 94% to show the measured differences</text>
+  <line x1="300.0" y1="132" x2="300.0" y2="606" stroke="#273650" stroke-width="1"/>
+  <text x="300.0" y="630" fill="#9FB0C8" font-size="14" text-anchor="middle">94%</text>
+  <line x1="431.7" y1="132" x2="431.7" y2="606" stroke="#273650" stroke-width="1"/>
+  <text x="431.7" y="630" fill="#9FB0C8" font-size="14" text-anchor="middle">95%</text>
+  <line x1="563.3" y1="132" x2="563.3" y2="606" stroke="#273650" stroke-width="1"/>
+  <text x="563.3" y="630" fill="#9FB0C8" font-size="14" text-anchor="middle">96%</text>
+  <line x1="695.0" y1="132" x2="695.0" y2="606" stroke="#273650" stroke-width="1"/>
+  <text x="695.0" y="630" fill="#9FB0C8" font-size="14" text-anchor="middle">97%</text>
+  <line x1="826.7" y1="132" x2="826.7" y2="606" stroke="#273650" stroke-width="1"/>
+  <text x="826.7" y="630" fill="#9FB0C8" font-size="14" text-anchor="middle">98%</text>
+  <line x1="958.3" y1="132" x2="958.3" y2="606" stroke="#273650" stroke-width="1"/>
+  <text x="958.3" y="630" fill="#9FB0C8" font-size="14" text-anchor="middle">99%</text>
+  <line x1="1090.0" y1="132" x2="1090.0" y2="606" stroke="#273650" stroke-width="1"/>
+  <text x="1090.0" y="630" fill="#9FB0C8" font-size="14" text-anchor="middle">100%</text>
+  <text x="278" y="172" fill="#E8EEF8" font-size="16" text-anchor="end">S4 full CE</text>
+  <rect x="300" y="148" width="664.9" height="32" rx="8" fill="#3DD6C6" opacity="1"/>
+  <text x="976.9" y="171" fill="#E8EEF8" font-size="16" font-weight="700">99.05%</text>
+  <text x="278" y="228" fill="#E8EEF8" font-size="16" text-anchor="end">S3 full CE</text>
+  <rect x="300" y="204" width="638.6" height="32" rx="8" fill="#68A4FF" opacity="0.78"/>
+  <text x="950.6" y="227" fill="#E8EEF8" font-size="16" font-weight="700">98.85%</text>
+  <text x="278" y="284" fill="#E8EEF8" font-size="16" text-anchor="end">S3 partial CE</text>
+  <rect x="300" y="260" width="624.1" height="32" rx="8" fill="#68A4FF" opacity="0.78"/>
+  <text x="936.1" y="283" fill="#E8EEF8" font-size="16" font-weight="700">98.74%</text>
+  <text x="278" y="340" fill="#E8EEF8" font-size="16" text-anchor="end">S3 partial ArcFace</text>
+  <rect x="300" y="316" width="599.1" height="32" rx="8" fill="#68A4FF" opacity="0.78"/>
+  <text x="911.1" y="339" fill="#E8EEF8" font-size="16" font-weight="700">98.55%</text>
+  <text x="278" y="396" fill="#E8EEF8" font-size="16" text-anchor="end">S4 partial ArcFace</text>
+  <rect x="300" y="372" width="549.1" height="32" rx="8" fill="#68A4FF" opacity="0.78"/>
+  <text x="861.1" y="395" fill="#E8EEF8" font-size="16" font-weight="700">98.17%</text>
+  <text x="278" y="452" fill="#E8EEF8" font-size="16" text-anchor="end">S4 partial CE</text>
+  <rect x="300" y="428" width="505.6" height="32" rx="8" fill="#68A4FF" opacity="0.78"/>
+  <text x="817.6" y="451" fill="#E8EEF8" font-size="16" font-weight="700">97.84%</text>
+  <text x="278" y="508" fill="#E8EEF8" font-size="16" text-anchor="end">S4 LoRA</text>
+  <rect x="300" y="484" width="351.6" height="32" rx="8" fill="#68A4FF" opacity="0.78"/>
+  <text x="663.6" y="507" fill="#E8EEF8" font-size="16" font-weight="700">96.67%</text>
+  <text x="278" y="564" fill="#E8EEF8" font-size="16" text-anchor="end">S3 LoRA</text>
+  <rect x="300" y="540" width="238.3" height="32" rx="8" fill="#68A4FF" opacity="0.78"/>
+  <text x="550.3" y="563" fill="#E8EEF8" font-size="16" font-weight="700">95.81%</text>
+</svg>
