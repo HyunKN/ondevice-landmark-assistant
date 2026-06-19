@@ -5,7 +5,7 @@ Status: Draft for user review
 
 ## Objective
 
-Create a personal GitHub repository that presents the completed Landmark Assistant work as an engineering project, not as a case-study-only repository. The front page must let a reviewer understand the problem, the user's ownership, the model and deployment decisions, the measured results, and the remaining limitations in roughly one page. A separate three-minute demo script will define the recording order and spoken narrative.
+Create a personal GitHub repository that presents the completed Landmark Assistant work as an engineering project, not as a case-study-only repository. The front page must let a reviewer understand the problem, the user's ownership, the model and deployment decisions, the measured results, and the remaining limitations without opening several documents. The README will be visual-first while remaining compatible with GitHub Markdown.
 
 ## Chosen approach
 
@@ -31,19 +31,18 @@ The README will use this order:
 
 The README will prioritize evidence over a chronological changelog. It will not reproduce authentication, notification, or suggestion-system details because they are not central to the project thesis and were not the user's ideas.
 
-### `DEMO_SCRIPT_3MIN.md`
+### Visual assets
 
-The demo script will define exact narration and screen direction:
+The repository will use project evidence as visual material:
 
-- 0:00-0:20: user problem and personal role.
-- 0:20-0:45: architecture.
-- 0:45-1:30: image recognition and natural-language search demonstration.
-- 1:30-2:05: 8 configurations x 5 folds and model-selection evidence.
-- 2:05-2:35: ONNX image/text encoder integration and Android artifact loading.
-- 2:35-2:50: quantization/NPU failure and why latency was not presented as accuracy.
-- 2:50-3:00: outcome, limitations, and closing statement.
+- A restrained hero banner containing only the project name and core stack.
+- An actual app screenshot or short demo GIF near the top of the README.
+- A GitHub-rendered Mermaid system architecture diagram.
+- A chart generated from the 40-run experiment summary.
+- A compact deployment diagram for the image/text ONNX bundle and Android asset flow.
+- A failure-analysis figure that separates NPU latency evidence from model accuracy.
 
-The file will also include a recording checklist. Producing or uploading the final video is outside this first implementation because no final recording asset has been supplied.
+The README may link to a longer demo video if one is later recorded, but a presentation script or narrated video is not a required deliverable. Generated imagery may be used only as restrained decoration. App behavior and experiment claims must use actual screenshots and project data.
 
 ## Evidence to include
 
@@ -83,11 +82,13 @@ Local filesystem paths, private credentials, service-account files, personal con
 
 - Korean-first prose with English technical terms where clearer.
 - One project thesis: model selection through deployable on-device integration.
-- Prefer tables and one Mermaid diagram over long prose.
-- Keep the README scannable in approximately three minutes.
+- Use GitHub-compatible Markdown, Mermaid, SVG/PNG/GIF, badges, and simple HTML tables only. Do not depend on custom CSS or JavaScript.
+- Prefer visual evidence, tables, and diagrams over long prose.
+- Keep the README scannable without forcing readers to open the documentation hub.
 - Describe the work as a team project with a clearly bounded personal contribution.
 - Avoid unsupported terms such as `production-ready`, `fully optimized`, or `real-time`.
 - Preserve the failed quantization result because it demonstrates honest engineering judgment.
+- Use plain, factual language. Avoid exaggerated or sentimental wording such as `innovative`, `journey`, `game-changing`, `cutting-edge`, or motivational closing statements.
 
 ## Validation
 
@@ -95,7 +96,7 @@ Before considering the portfolio ready:
 
 1. Check every metric against the public experiment documents.
 2. Verify every public link.
-3. Render the Markdown and inspect the Mermaid diagram.
+3. Render the Markdown and inspect the Mermaid diagram, tables, images, and narrow-screen behavior.
 4. Scan for local absolute paths, email addresses, credentials, tokens, and personal data.
 5. Confirm that no claim assigns final Android implementation or Auth/notification/suggestion ideation to the user.
 6. Confirm that the README distinguishes command/test success from actual Android-device demonstration.
@@ -107,5 +108,5 @@ Before considering the portfolio ready:
 - Copying the complete Flutter/FastAPI codebase.
 - Committing ONNX model binaries or external-data files.
 - Re-running the physical Android demonstration.
-- Recording or publishing the final video.
+- Recording or publishing a video unless the user later supplies or requests the required footage.
 - Pushing this repository before explicit user approval.
