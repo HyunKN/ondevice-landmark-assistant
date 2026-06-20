@@ -94,11 +94,11 @@ The tested quantized NPU artifact produced latency measurements, but its accurac
 | --- | --- |
 | Model training and experiment design | Project direction and scope (shared) |
 | Evaluation rules and failure analysis | Final Flutter/Android implementation |
-| Model artifact, serving contract and integration validation | Auth feature and account flow |
+| On-device model integration, artifact/serving contract, validation and debugging | Auth feature and account flow |
 | Sprint 1 demo app design and implementation | Notification feature |
 | Landmark-recognition architecture and model-to-app integration flow | Suggestion feature |
 | Technical documentation and handoff | App UI design and implementation |
-|  | Additional integration work by team members |
+|  | Initial app-side structure and other app features implemented by team members |
 
 This repository is a portfolio case study, not a claim that every line of the final team application was written by one person. It includes curated training, prototype and integration source. Model binaries and teammates' final Flutter/Android files are intentionally not copied here; the relevant team commits are linked instead.
 

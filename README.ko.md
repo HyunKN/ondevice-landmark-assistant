@@ -94,11 +94,11 @@ Sprint 1 dynamic INT8은 테스트한 CPU 환경에서 FP32와 가까운 embeddi
 | --- | --- |
 | 모델 학습과 실험 설계 | 프로젝트 방향과 범위 설정(팀 공동) |
 | 평가 기준과 실패 분석 | 최종 Flutter/Android 구현 |
-| 모델 artifact, serving contract와 integration 검증 | Auth 기능과 계정 flow |
+| On-device 모델 연동, artifact/serving contract, validation과 debugging | Auth 기능과 계정 flow |
 | Sprint 1 demo app 설계 및 구현 | 알림 기능 |
 | 랜드마크 인식 architecture와 model-to-app integration flow 설계 | 건의 기능 |
 | 기술 문서와 handoff 정리 | 앱 UI 설계 및 구현 |
-|  | 다른 팀원의 추가 integration 작업 |
+|  | 팀원이 구현한 초기 app-side 구조와 기타 앱 기능 |
 
 이 repository는 프로젝트 case study이며, 최종 팀 애플리케이션의 모든 코드를 한 사람이 작성했다는 의미가 아닙니다. 선별한 training, prototype, integration source는 포함했지만 모델 binary와 팀원이 작성한 최종 Flutter/Android 파일은 복사하지 않고 관련 commit으로 연결했습니다.
 
