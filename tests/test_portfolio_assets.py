@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 METRICS_PATH = ROOT / "data" / "metrics.json"
 README_PATH = ROOT / "README.md"
+README_KO_PATH = ROOT / "README.ko.md"
 SVG_EXPECTATIONS = {
     "hero.svg": "On-device Landmark Assistant",
     "experiment-comparison.svg": "Validation Top-1",
@@ -17,6 +18,15 @@ APP_CAPTURES = (
     "app-home.png",
     "app-image-result.png",
     "app-text-search.png",
+)
+README_ASSETS = (
+    "assets/hero.svg",
+    "assets/app-home.png",
+    "assets/app-image-result.png",
+    "assets/app-text-search.png",
+    "assets/deployment-flow.svg",
+    "assets/experiment-comparison.svg",
+    "assets/npu-evidence.svg",
 )
 PUBLIC_DIRS = ("assets", "data", "scripts")
 
@@ -105,8 +115,39 @@ class PortfolioAssetsTest(unittest.TestCase):
                 self.assertTrue(alt.strip())
                 self.assertTrue((ROOT / target).is_file(), f"missing image {target}")
 
+    def test_bilingual_readmes_link_each_other_and_preserve_evidence(self):
+        self.assertTrue(README_KO_PATH.is_file(), "missing README.ko.md")
+        english = README_PATH.read_text(encoding="utf-8")
+        korean = README_KO_PATH.read_text(encoding="utf-8")
+
+        self.assertIn('href="README.ko.md"', english)
+        self.assertIn('href="README.md"', korean)
+
+        for heading in (
+            "## 프로젝트 개요",
+            "## 앱 동작",
+            "## 시스템 설계",
+            "## 실험 근거",
+            "## 배포 결과",
+            "## 담당 범위",
+            "## 한계",
+            "## 근거 자료",
+        ):
+            with self.subTest(heading=heading):
+                self.assertIn(heading, korean)
+
+        for value in ("99.05%", "98.67%", "0.99941", "314 ms"):
+            with self.subTest(value=value):
+                self.assertIn(value, english)
+                self.assertIn(value, korean)
+
+        for asset in README_ASSETS:
+            with self.subTest(asset=asset):
+                self.assertIn(asset, english)
+                self.assertIn(asset, korean)
+
     def test_public_files_contain_no_local_paths_or_credentials(self):
-        paths = [README_PATH] if README_PATH.exists() else []
+        paths = [path for path in (README_PATH, README_KO_PATH) if path.exists()]
         for dirname in PUBLIC_DIRS:
             directory = ROOT / dirname
             if directory.exists():

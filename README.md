@@ -1,3 +1,7 @@
+<p align="right">
+  <strong><kbd>English</kbd></strong> <a href="README.ko.md"><kbd>한국어</kbd></a>
+</p>
+
 <p align="center">
   <img src="assets/hero.svg" alt="On-device Landmark Assistant project banner">
 </p>
