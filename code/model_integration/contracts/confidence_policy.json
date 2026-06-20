@@ -1,0 +1,11 @@
+{
+  "model_id": "mobileclip2_s3_server_full_ce_hardneg",
+  "precision": "fp16",
+  "score_type": "cosine_similarity",
+  "reject_threshold": 0.22,
+  "weak_reject_threshold": 0.28,
+  "weak_margin": 0.08,
+  "match_threshold": 0.48,
+  "match_floor": 0.38,
+  "match_margin": 0.1
+}

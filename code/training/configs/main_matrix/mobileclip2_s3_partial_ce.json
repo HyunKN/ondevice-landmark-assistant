@@ -1,0 +1,88 @@
+﻿{
+    "data":  {
+                 "seed":  20260513,
+                 "folds":  5,
+                 "strategy":  "locked_test_plus_5fold_trainval",
+                 "test_ratio":  0.15,
+                 "caption_languages":  [
+                                           "ko",
+                                           "en"
+                                       ],
+                 "supervised_filter":  "label_status == confirmed and training_role in train_positive/low_weight_positive",
+                 "class_balance_strategy":  "sqrt_weighted",
+                 "max_captions_per_image":  6
+             },
+    "loss":  {
+                 "hard_negative":  {
+                                       "margin":  0.1,
+                                       "source":  "labels.json confusing_with",
+                                       "weight":  0.1,
+                                       "enabled":  true
+                                   },
+                 "classification":  {
+                                        "type":  "cross_entropy",
+                                        "scale":  30,
+                                        "margin":  0.2,
+                                        "weight":  1,
+                                        "label_smoothing":  0.05
+                                    },
+                 "image_text_contrastive":  {
+                                                "weight":  0.3,
+                                                "enabled":  true,
+                                                "temperature":  0.07,
+                                                "positive_rule":  "same landmark_id image-caption pairs are positives"
+                                            }
+             },
+    "model":  {
+                  "id":  "mobileclip2_s3_server_partial_ce_hardneg",
+                  "note":  "Paper-grade server experiment. Name uses server GPU context; server naming.",
+                  "family":  "mobileclip2",
+                  "model_name":  "MobileCLIP2-S3",
+                  "pretrained":  "dfndr2b",
+                  "train_method":  "partial_unfreeze",
+                  "text_unfreeze_ratio":  0.15,
+                  "image_unfreeze_ratio":  0.25
+              },
+    "training":  {
+                     "epochs":  30,
+                     "image_std":  [
+                                       0.26862954,
+                                       0.26130258,
+                                       0.27577711
+                                   ],
+                     "image_mean":  [
+                                        0.48145466,
+                                        0.4578275,
+                                        0.40821073
+                                    ],
+                     "image_size":  224,
+                     "min_lr_ratio":  0.01,
+                     "embedding_dim":  512,
+                     "warmup_epochs":  2,
+                     "batch_size_per_gpu":  4,
+                     "aug_randaugment_num_ops":  2,
+                     "aug_randaugment_magnitude":  5,
+                     "aug_random_resized_crop_min_scale":  0.8
+                 },
+    "optimizer":  {
+                      "type":  "adamw",
+                      "head_lr":  0.001,
+                      "encoder_lr":  2E-05,
+                      "lr_scheduler":  "cosine",
+                      "weight_decay":  0.05,
+                      "projection_lr":  0.0005
+                  },
+    "evaluation":  {
+                       "outputs":  [
+                                       "metrics.json",
+                                       "predictions_val.jsonl",
+                                       "predictions_test.jsonl",
+                                       "predictions_text_queries.jsonl",
+                                       "low_margin_val.csv",
+                                       "low_margin_test.csv"
+                                   ],
+                       "tie_breaker":  "val_top3_accuracy",
+                       "primary_metric":  "val_top1_accuracy",
+                       "low_margin_threshold":  0.05
+                   }
+}

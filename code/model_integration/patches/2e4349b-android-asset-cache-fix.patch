@@ -1,0 +1,39 @@
+﻿diff --git a/android/app/src/main/kotlin/com/example/landmark_demo_app/MainActivity.kt b/android/app/src/main/kotlin/com/example/landmark_demo_app/MainActivity.kt
+index eaea1db..bed3df9 100644
+--- a/android/app/src/main/kotlin/com/example/landmark_demo_app/MainActivity.kt
++++ b/android/app/src/main/kotlin/com/example/landmark_demo_app/MainActivity.kt
+@@ -70,20 +70,23 @@ class MainActivity : FlutterActivity() {
+             val assetKey = flutterLoader.getLookupKeyForAsset(assetPath)
+             val destinationFile = File(targetDir, fileName)
+             
+-            // Check if file needs copying (check existence and size mismatch for cache invalidation)
+-            val assetFd = try {
+-                assets.openFd(assetKey)
++            var assetLength = -1L
++            try {
++                assets.open(assetKey).use { input ->
++                    var bytesRead: Int
++                    val buffer = ByteArray(8192)
++                    assetLength = 0L
++                    while (input.read(buffer).also { bytesRead = it } != -1) {
++                        assetLength += bytesRead
++                    }
++                }
+             } catch (e: Exception) {
+-                null
++                // Fallback to -1 if cannot read and print error log
++                android.util.Log.e("MainActivity", "Failed to read asset size for $fileName: ${e.message}", e)
++                assetLength = -1L
+             }
+ 
+-            val needsCopy = if (assetFd != null) {
+-                !destinationFile.exists() || destinationFile.length() != assetFd.length
+-            } else {
+-                !destinationFile.exists()
+-            }
+-            
+-            assetFd?.close()
++            val needsCopy = !destinationFile.exists() || (assetLength != -1L && destinationFile.length() != assetLength)
+ 
+             if (needsCopy) {
+                 copyAssetStream(assetKey, destinationFile)

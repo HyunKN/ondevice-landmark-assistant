@@ -62,6 +62,16 @@ Image and text retrieval share an embedding contract, but use different indexes 
 
 The server log is not required for inference. During the local capture, the backend was unavailable and the app still completed both searches.
 
+## Code walkthrough
+
+The curated source is organized by the same engineering sequence:
+
+1. [`code/training/`](code/training/) — actual dataset, model, loss, training, evaluation and ONNX export source, plus the sanitized eight-config matrix.
+2. [`code/sprint1_prototype/`](code/sprint1_prototype/) — the tracked Streamlit prototype used to validate image/text search and confidence behavior.
+3. [`code/model_integration/`](code/model_integration/) — actual serving-contract metadata, validation and semantic-artifact scripts, and the Android asset-cache fix.
+
+[`code/SOURCES.md`](code/SOURCES.md) records provenance. [`code/CONTRIBUTIONS.md`](code/CONTRIBUTIONS.md) separates design, direct implementation and team implementation.
+
 ## Experiment evidence
 
 ![Horizontal bar chart of validation Top-1 across eight training configurations](assets/experiment-comparison.svg)
@@ -80,17 +90,17 @@ The tested quantized NPU artifact produced latency measurements, but its accurac
 
 ## My contribution
 
-| User-led work | Team-owned work |
+| My direct work | Shared or team-implemented work |
 | --- | --- |
-| Project direction and scope | Final Android code implementation |
-| Model training and experiment design | Auth feature and account flow |
-| Evaluation rules and failure analysis | Notification feature |
-| Model artifact and serving contract | Suggestion feature |
-| Sprint 1 demo app design and implementation | Integration work contributed by other team members |
-| Final Android app architecture and UI design |  |
-| Technical documentation and handoff |  |
+| Model training and experiment design | Project direction and scope (shared) |
+| Evaluation rules and failure analysis | Final Flutter/Android implementation |
+| Model artifact, serving contract and integration validation | Auth feature and account flow |
+| Sprint 1 demo app design and implementation | Notification feature |
+| Landmark-recognition architecture and model-to-app integration flow | Suggestion feature |
+| Technical documentation and handoff | App UI design and implementation |
+|  | Additional integration work by team members |
 
-This repository is a portfolio case study, not a claim that every line of the final team application was written by one person. Model binaries and the final application source are intentionally not copied here.
+This repository is a portfolio case study, not a claim that every line of the final team application was written by one person. It includes curated training, prototype and integration source. Model binaries and teammates' final Flutter/Android files are intentionally not copied here; the relevant team commits are linked instead.
 
 ## Limitations
 

@@ -1,0 +1,65 @@
+"""config.toml 로더."""
+from __future__ import annotations
+
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+
+if sys.version_info >= (3, 11):
+    import tomllib
+else:
+    import tomli as tomllib  # type: ignore
+
+
+@dataclass
+class AppConfig:
+    assets_dir: str
+    log_path: str
+    checkpoint: str
+    mobile_artifact_dir: str
+    device: str
+    inference_backend: str
+    warmup_on_start: bool
+    reject_threshold: float
+    policy: dict
+    image_only: dict           # FusionWeights kwargs
+    text_only: dict
+    max_image_mb: int
+    slow_inference_ms: int
+    title: str
+
+
+def load_config(path: str) -> AppConfig:
+    raw = tomllib.loads(Path(path).read_text(encoding="utf-8"))
+    paths = raw.get("paths", {})
+    runtime = raw.get("runtime", {})
+    fusion = raw.get("fusion", {})
+    policy = raw.get("policy", {})
+    ui = raw.get("ui", {})
+    return AppConfig(
+        assets_dir=paths.get("assets_dir", "./assets"),
+        log_path=paths.get("log_path", "./logs/demo.jsonl"),
+        checkpoint=paths.get("checkpoint", "./best.pt"),
+        mobile_artifact_dir=paths.get("mobile_artifact_dir", "./mobile_artifacts"),
+        device=runtime.get("device", "auto"),
+        inference_backend=runtime.get("inference_backend", "pytorch"),
+        warmup_on_start=runtime.get("warmup_on_start", True),
+        reject_threshold=float(fusion.get("reject_threshold", 0.25)),
+        policy={
+            "reject_threshold": float(policy.get("reject_threshold", fusion.get("reject_threshold", 0.25))),
+            "weak_reject_threshold": float(policy.get("weak_reject_threshold", 0.35)),
+            "weak_margin": float(policy.get("weak_margin", 0.12)),
+            "match_threshold": float(policy.get("match_threshold", 0.60)),
+            "match_floor": float(policy.get("match_floor", 0.50)),
+            "match_margin": float(policy.get("match_margin", 0.20)),
+            "isolated_match_threshold": float(policy.get("isolated_match_threshold", 0.40)),
+            "isolated_match_margin": float(policy.get("isolated_match_margin", 0.30)),
+            "isolated_match_top2_max": float(policy.get("isolated_match_top2_max", 0.10)),
+            "text_no_keyword_reject_threshold": float(policy.get("text_no_keyword_reject_threshold", 0.35)),
+        },
+        image_only=fusion.get("image_only", {"w_image": 1.0, "w_text": 0.0, "w_keyword": 0.0}),
+        text_only=fusion.get("text_only", {"w_image": 0.0, "w_text": 0.6, "w_keyword": 0.4}),
+        max_image_mb=int(ui.get("max_image_mb", 10)),
+        slow_inference_ms=int(ui.get("slow_inference_ms", 5000)),
+        title=ui.get("title", "Landmark Assistant"),
+    )

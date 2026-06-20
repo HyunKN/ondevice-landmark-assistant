@@ -1,0 +1,13 @@
+﻿{
+    "note":  "Sanitized from fold 0 W\u0026B export metadata; candidate.runtime and all raw run history are omitted.",
+    "configs":  {
+                    "mobileclip2_s3_full_ce.json":  "mobileclip2_s3_server_full_ce_hardneg_fold0_20260611_173848",
+                    "mobileclip2_s3_partial_ce.json":  "mobileclip2_s3_server_partial_ce_hardneg_fold0_20260612_094129",
+                    "mobileclip2_s3_partial_arcface.json":  "mobileclip2_s3_server_partial_arcface_hardneg_fold0_20260614_074157",
+                    "mobileclip2_s3_lora_ce.json":  "mobileclip2_s3_server_lora_ce_hardneg_fold0_20260614_115759",
+                    "mobileclip2_s4_full_ce.json":  "mobileclip2_s4_server_full_ce_hardneg_fold0_20260612_003526",
+                    "mobileclip2_s4_partial_ce.json":  "mobileclip2_s4_server_partial_ce_hardneg_fold0_20260614_153813",
+                    "mobileclip2_s4_partial_arcface.json":  "mobileclip2_s4_server_partial_arcface_hardneg_fold0_20260614_220534",
+                    "mobileclip2_s4_lora_ce.json":  "mobileclip2_s4_server_lora_ce_hardneg_fold0_20260615_043734"
+                }
+}

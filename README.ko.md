@@ -62,6 +62,16 @@ flowchart LR
 
 Server log는 추론에 필수 요소가 아닙니다. Local 캡처 당시 backend가 실행되지 않은 상태였지만 두 검색 모두 완료됐습니다.
 
+## 코드 둘러보기
+
+실제 핵심 source는 프로젝트 진행 순서에 맞춰 정리했습니다.
+
+1. [`code/training/`](code/training/) — 실제 dataset, model, loss, training, evaluation, ONNX export 코드와 개인정보를 제거한 8개 config matrix
+2. [`code/sprint1_prototype/`](code/sprint1_prototype/) — 이미지·텍스트 검색과 confidence 동작을 검증한 당시 Streamlit prototype
+3. [`code/model_integration/`](code/model_integration/) — 실제 serving contract metadata, validation/semantic artifact script, Android asset-cache 수정 patch
+
+출처는 [`code/SOURCES.md`](code/SOURCES.md), 설계·직접 구현·팀 구현의 구분은 [`code/CONTRIBUTIONS.md`](code/CONTRIBUTIONS.md)에 기록했습니다.
+
 ## 실험 근거
 
 ![8개 학습 configuration의 validation Top-1 비교 막대그래프](assets/experiment-comparison.svg)
@@ -80,17 +90,17 @@ Sprint 1 dynamic INT8은 테스트한 CPU 환경에서 FP32와 가까운 embeddi
 
 ## 담당 범위
 
-| 내가 주도한 작업 | 팀에서 담당한 작업 |
+| 내가 직접 담당한 작업 | 공동 결정 또는 팀 구현 |
 | --- | --- |
-| 프로젝트 방향과 범위 설정 | 최종 Android 코드 구현 |
-| 모델 학습과 실험 설계 | Auth 기능과 계정 flow |
-| 평가 기준과 실패 분석 | 알림 기능 |
-| 모델 artifact와 serving contract | 건의 기능 |
-| Sprint 1 demo app 설계 및 구현 | 다른 팀원이 담당한 integration 작업 |
-| 최종 Android 앱 architecture와 UI 설계 |  |
-| 기술 문서와 handoff 정리 |  |
+| 모델 학습과 실험 설계 | 프로젝트 방향과 범위 설정(팀 공동) |
+| 평가 기준과 실패 분석 | 최종 Flutter/Android 구현 |
+| 모델 artifact, serving contract와 integration 검증 | Auth 기능과 계정 flow |
+| Sprint 1 demo app 설계 및 구현 | 알림 기능 |
+| 랜드마크 인식 architecture와 model-to-app integration flow 설계 | 건의 기능 |
+| 기술 문서와 handoff 정리 | 앱 UI 설계 및 구현 |
+|  | 다른 팀원의 추가 integration 작업 |
 
-이 repository는 프로젝트 case study이며, 최종 팀 애플리케이션의 모든 코드를 한 사람이 작성했다는 의미가 아닙니다. 모델 binary와 최종 애플리케이션 소스는 이 repository에 복사하지 않았습니다.
+이 repository는 프로젝트 case study이며, 최종 팀 애플리케이션의 모든 코드를 한 사람이 작성했다는 의미가 아닙니다. 선별한 training, prototype, integration source는 포함했지만 모델 binary와 팀원이 작성한 최종 Flutter/Android 파일은 복사하지 않고 관련 commit으로 연결했습니다.
 
 ## 한계
 

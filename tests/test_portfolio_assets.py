@@ -80,7 +80,7 @@ class PortfolioAssetsTest(unittest.TestCase):
             "## Limitations",
             "## Evidence",
             "closed-set",
-            "final Android code implementation",
+            "final Flutter/Android implementation",
         )
         for phrase in required:
             with self.subTest(phrase=phrase):

@@ -1,0 +1,28 @@
+{
+  "artifact_version": "landmark-assistant-mobileclip2-multitask-export-v1",
+  "snapshot_note": "Metadata-only example. Model binaries and external data are intentionally omitted.",
+  "binaries_included": false,
+  "precision": "fp16",
+  "model_id": "mobileclip2_s3_server_full_ce_hardneg",
+  "model_name": "MobileCLIP2-S3",
+  "class_count": 23,
+  "embedding_dim": 512,
+  "image_size": 224,
+  "image_encoder": {
+    "onnx": "mobileclip2_s3_server_full_ce_hardneg_image_encoder_fp16_mixed.onnx",
+    "external_data": "mobileclip2_s3_server_full_ce_hardneg_image_encoder_fp16_mixed.onnx.data",
+    "input": "image",
+    "output": "embedding"
+  },
+  "text_encoder": {
+    "onnx": "mobileclip2_s3_server_full_ce_hardneg_text_encoder_fp16_mixed.onnx",
+    "external_data": "mobileclip2_s3_server_full_ce_hardneg_text_encoder_fp16_mixed.onnx.data",
+    "input": "text_tokens",
+    "output": "text_embedding",
+    "context_length": 77
+  },
+  "opset": 18,
+  "ir_version": 9,
+  "reparameterized_mobileone": true,
+  "precision_policy": "selected_fp16_weight_storage_fp32_compute"
+}

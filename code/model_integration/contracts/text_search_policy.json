@@ -1,0 +1,10 @@
+{
+  "score_type": "semantic_text_fusion",
+  "semantic_weight": 0.75,
+  "keyword_weight": 0.25,
+  "matched_threshold": 0.45,
+  "ambiguous_margin": 0.08,
+  "out_of_scope_threshold": 0.25,
+  "no_keyword_oos_margin": 0.05,
+  "no_keyword_match_threshold": 0.6
+}
